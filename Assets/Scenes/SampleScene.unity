@@ -19184,6 +19184,36 @@ LightProbeGroup:
   - {x: -0.8738291, y: 0.51661086, z: 2.5225298}
   - {x: -1.3810283, y: 0.51661086, z: 2.9244456}
   m_Dering: 0
+--- !u!1 &1475194798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475194799}
+  m_Layer: 6
+  m_Name: Shoot Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1475194799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475194798}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4.27, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4495880029304585273}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1487511951
 GameObject:
   m_ObjectHideFlags: 0
@@ -24753,6 +24783,7 @@ GameObject:
   - component: {fileID: 4495880029304585273}
   - component: {fileID: 3832356289523525254}
   - component: {fileID: 3832356289523525253}
+  - component: {fileID: 3832356289523525255}
   - component: {fileID: 3832356289523525252}
   m_Layer: 6
   m_Name: Rocket Launcher
@@ -24808,7 +24839,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3832356289523525255}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -24905,6 +24948,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.77, y: 2.44, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3832356289523525255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832356289523525251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31327e62e0d4b494c8cd938e1abdd973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
+  bullet: {fileID: 1733184788343161246, guid: 70219aabf6dd84944aee737dabd5defd, type: 3}
+  barrel: {fileID: 1475194799}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!4 &3959646345813983948
 Transform:
   m_ObjectHideFlags: 0
@@ -25094,6 +25154,7 @@ Transform:
   - {fileID: 1519688399972449720}
   - {fileID: 2801579574292164908}
   - {fileID: 795513980}
+  - {fileID: 1475194799}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 90.2, z: 0}
