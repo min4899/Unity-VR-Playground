@@ -33,6 +33,14 @@ public class Rocket : MonoBehaviour
             if (rb != null) {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
+            else {
+                ImpactReceiver impactReceiver = nearbyObject.GetComponent<ImpactReceiver>();
+                if (impactReceiver != null) {
+                    Vector3 dir = nearbyObject.transform.position - transform.position;
+                    impactReceiver.AddImpact(dir, force);
+                }
+            }
+
         }
     }
 }
